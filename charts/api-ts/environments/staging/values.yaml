@@ -3,7 +3,7 @@ replicaCount: 2
 image:
   repository: clecio/api-ts
   tag: staging
-  pullPolicy: always
+  pullPolicy: Always
 
 env:
   MONGO_URI: mongodb://mongo-staging-mongodb:27017/stagingdb
