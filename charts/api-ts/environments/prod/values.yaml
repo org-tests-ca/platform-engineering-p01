@@ -6,6 +6,6 @@ image:
   pullPolicy: Always
 
 env:
-  MONGO_URI: mongodb://mongo-prod:27017/proddb
+  MONGO_URI: mmongodb://mongo-prod-mongodb:27017/proddb
   REDIS_HOST: redis-prod-master
   REDIS_PORT: "6379"

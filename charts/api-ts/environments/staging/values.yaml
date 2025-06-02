@@ -6,6 +6,6 @@ image:
   pullPolicy: always
 
 env:
-  MONGO_URI: mongodb://mongo-staging:27017/stagingdb
+  MONGO_URI: mongodb://mongo-staging-mongodb:27017/stagingdb
   REDIS_HOST: redis-staging-master
   REDIS_PORT: "6379"
