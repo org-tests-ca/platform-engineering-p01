@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "api-ts.fullname" . }}
+  labels:
+    app: {{ include "api-ts.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "api-ts.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "api-ts.name" . }}
+    spec:
+      containers:
+        - name: api
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.service.targetPort }}
+          env:
+            - name: MONGO_URI
+              value: {{ .Values.env.MONGO_URI | quote }}
+            - name: REDIS_HOST
+              value: {{ .Values.env.REDIS_HOST | quote }}
+            - name: REDIS_PORT
+              value: {{ .Values.env.REDIS_PORT | quote }}

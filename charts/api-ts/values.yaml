@@ -1,0 +1,16 @@
+replicaCount: 1
+
+image:
+  repository: clecio/api-ts
+  pullPolicy: Always
+  tag: latest
+
+service:
+  type: ClusterIP
+  port: 4600
+  targetPort: 4600
+
+env:
+  MONGO_URI: mongodb://mongo:27017/devdb
+  REDIS_HOST: redis-master
+  REDIS_PORT: "6379"

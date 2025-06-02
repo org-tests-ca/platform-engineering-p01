@@ -1,0 +1,11 @@
+replicaCount: 3
+
+image:
+  repository: clecio/api-ts
+  tag: prod
+  pullPolicy: IfNotPresent
+
+env:
+  MONGO_URI: mongodb://mongo-prod:27017/proddb
+  REDIS_HOST: redis-prod
+  REDIS_PORT: "6379"

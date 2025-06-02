@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    container_name: api-ts
+    ports:
+      - "4600:4600"
+    depends_on:
+      - mongo
+      - redis
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/devdb
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379

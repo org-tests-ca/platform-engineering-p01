@@ -1,0 +1,11 @@
+replicaCount: 1
+
+image:
+  repository: clecio/api-ts
+  tag: latest
+  pullPolicy: Always
+
+env:
+  MONGO_URI: mongodb://mongo-dev-mongodb:27017/devdb
+  REDIS_HOST: redis-dev-master
+  REDIS_PORT: "6379"

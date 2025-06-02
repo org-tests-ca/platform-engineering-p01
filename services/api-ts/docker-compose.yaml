@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  mongo:
+    image: mongo:5
+    container_name: api-ts-mongo
+    ports:
+      - "27017:27017"
+    restart: unless-stopped
+
+  redis:
+    image: redis:7
+    container_name: api-ts-redis
+    ports:
+      - "6379:6379"
+    restart: unless-stopped
+
+  api:
+    image: clecio/api-ts:latest
+    container_name: api-ts
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4600:4600"
+    environment:
+      - MONGO_URI=${MONGO_URI}
+      - REDIS_HOST=${REDIS_HOST}
+      - REDIS_PORT=${REDIS_PORT}
+    depends_on:
+      - mongo
+      - redis
+    restart: unless-stopped
