@@ -5,19 +5,16 @@ metadata:
   namespace: argocd
 spec:
   project: default
-
   source:
-    repoURL: https://github.com/org-tests-ca/platform-engineering-p01.git
+    repoURL: https://github.com/org-tests-ca/platform-engineering-p01
     targetRevision: develop
     path: charts/api-ts
     helm:
       valueFiles:
-        - values-dev.yaml
-
+        - environments/dev/values.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: dev
-
   syncPolicy:
     automated:
       prune: true

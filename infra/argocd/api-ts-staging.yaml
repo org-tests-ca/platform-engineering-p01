@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: api-ts-prod
+  name: api-ts-staging
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/org-tests-ca/platform-engineering-p01
-    targetRevision: main
+    targetRevision: staging
     path: charts/api-ts
     helm:
       valueFiles:
-        - environments/prod/values.yaml
+        - environments/staging/values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: prod
+    namespace: staging
   syncPolicy:
     automated:
       prune: true

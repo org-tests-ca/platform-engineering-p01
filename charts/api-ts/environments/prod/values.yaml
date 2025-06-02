@@ -7,5 +7,5 @@ image:
 
 env:
   MONGO_URI: mongodb://mongo-prod:27017/proddb
-  REDIS_HOST: redis-prod
+  REDIS_HOST: redis-prod-master
   REDIS_PORT: "6379"
