@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: clecio/api-ts
-  tag: latest
+  tag: develop
   pullPolicy: Always
 
 env:

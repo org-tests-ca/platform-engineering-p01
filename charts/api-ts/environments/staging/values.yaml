@@ -1,0 +1,11 @@
+replicaCount: 2
+
+image:
+  repository: clecio/api-ts
+  tag: staging
+  pullPolicy: always
+
+env:
+  MONGO_URI: mongodb://mongo-staging-mongodb:27017/stagingdb
+  REDIS_HOST: redis-staging-master
+  REDIS_PORT: "6379"
