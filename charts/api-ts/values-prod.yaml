@@ -2,8 +2,8 @@ replicaCount: 3
 
 image:
   repository: clecio/api-ts
-  tag: prod
-  pullPolicy: IfNotPresent
+  tag: main
+  pullPolicy: Always
 
 env:
   MONGO_URI: mongodb://mongo-prod:27017/proddb
